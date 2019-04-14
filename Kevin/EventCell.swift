@@ -16,13 +16,9 @@ final class EventCell: UITableViewCell, Reusable {
 		didSet { update() }
 	}
 	
-	override func awakeFromNib() {
-		super.awakeFromNib()
-	}
-	
 	func update() {
 		capturedImageView.image = event.image
 		dateLabel.text = dateFormatter.string(from: event.date)
-		outcomeLabel.text = event.outcome?.rawValue ?? "undecided"
+		outcomeLabel.text = event.outcomeDescription
 	}
 }

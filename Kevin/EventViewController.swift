@@ -9,8 +9,20 @@ final class EventViewController: UIViewController, Reusable {
 	@IBOutlet var stateLabel: UILabel!
 	
 	@IBOutlet var buttonStack: UIStackView!
-	@IBOutlet var acceptButton: UIButton!
-	@IBOutlet var rejectButton: UIButton!
+	
+	@IBAction func acceptPerson() {
+		Lambda.overrideAlert()
+		
+		UIView.animate(withDuration: 0.1) {
+			self.event.outcome = .accepted
+		}
+	}
+	
+	@IBAction func rejectPerson() {
+		UIView.animate(withDuration: 0.1) {
+			self.event.outcome = .rejected
+		}
+	}
 	
 	var event: Event! {
 		didSet { update() }

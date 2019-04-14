@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			dump(error)
 		}
 		
+		application.applicationIconBadgeNumber = 0
+		
 		return true
 	}
 	
